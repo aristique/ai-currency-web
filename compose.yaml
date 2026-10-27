@@ -1,0 +1,24 @@
+services:
+  lab3:
+    image: ai-currency-web:local
+    build:
+      context: .
+      target: app
+    user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
+    init: true
+    ports:
+      - "127.0.0.1:8083:8080"
+    volumes:
+      - ./data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/api/health',timeout=2)"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+  tests:
+    image: ai-currency-web-tests:local
+    build:
+      context: .
+      target: tests
+    profiles: [test]
+    init: true
