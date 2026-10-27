@@ -4,13 +4,13 @@ WORKDIR /app
 COPY src/ src/
 COPY web/ web/
 
+FROM base AS app
+USER 1000:1000
+EXPOSE 8080
+CMD ["python", "-m", "currency"]
+
 FROM base AS tests
 COPY requirements-test.txt .
 RUN pip install --no-cache-dir -r requirements-test.txt
 COPY tests/ tests/
 CMD ["python", "-m", "pytest", "-q", "-p", "no:cacheprovider"]
-
-FROM base AS app
-USER 1000:1000
-EXPOSE 8080
-CMD ["python", "-m", "currency"]
