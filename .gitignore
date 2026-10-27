@@ -1,0 +1,9 @@
+data/**
+!data/**/
+!data/**/.gitkeep
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+.venv/
+.agents/*.json
