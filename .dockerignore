@@ -1,0 +1,6 @@
+.git
+.agents
+.specify
+data
+__pycache__
+.pytest_cache
