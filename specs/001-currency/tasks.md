@@ -12,6 +12,6 @@ Prerequisites: constitution, spec, plan, research and data model committed befor
 - [x] T009 Add deterministic parser, conversion, input and failure tests in tests/.
 - [x] T010 Verify browser, real-source retrieval and persistent offline behavior.
 - [x] T011 Complete README and REPORT.md with actual observations and approved tool deviation.
-- [ ] T012 Merge implementation and test branches through PRs, preserving process history.
+- [x] T012 Merge implementation and test branches through PRs, preserving process history.
 
 Order: T001–T004 → T005–T008 → T009–T011 → T012. No model/agent delegation is required.
